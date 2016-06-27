@@ -2,13 +2,11 @@ import { typeov } from 'typeov'
 import argv from 'yargs'
 import assert from 'assert'
 import musicmatch from 'musicmatch'
-import { isEnv } from './util'
 
-export const getlyrics = new class GetLyrics {
+class GetLyrics {
   static music = musicmatch()
 
   constructor() {
-    this.start().catch(process.stderr.write)
     return {
       parseMessageBody: this.parseMessageBody.bind(this),
       parseTracks: this.parseTracks.bind(this),
@@ -16,25 +14,24 @@ export const getlyrics = new class GetLyrics {
       parseLyrics: this.parseLyrics.bind(this),
       fetchTracksByQuery: this.fetchTracksByQuery.bind(this),
       fetchLyricsByTrackId: this.fetchLyricsByTrackId.bind(this),
-      getTracksWithLyrics: this.getTracksWithLyrics.bind(this)
+      getTracksWithLyrics: this.getTracksWithLyrics.bind(this),
+      getThoseMotherEffingLyrics: this.getThoseMotherEffingLyrics.bind(this)
     }
   }
 
   async start() {
-    if (!isEnv('test')) {
-      const args = argv.usage('Usage: $0 <command> [options]')
-        .demand('s')
-        .alias('s', 'search')
-        .nargs('s', 1)
-        .describe('s', 'Grimes - REALiTi')
-        .help('h')
-        .alias('h', 'help')
-        .argv
-      const searchTerm = args.search
-      process.stdout.write(`searching ${searchTerm}...\n`)
-      const result = await this.getThoseMotherEffingLyrics(searchTerm)
-      process.stdout.write(`${result}\n`)
-    }
+    const args = argv.usage('Usage: $0 <command> [options]')
+      .demand('s')
+      .alias('s', 'search')
+      .nargs('s', 1)
+      .describe('s', 'Grimes - REALiTi')
+      .help('h')
+      .alias('h', 'help')
+      .argv
+    const searchTerm = args.search
+    process.stdout.write(`searching ${searchTerm}...\n`)
+    const result = await this.getThoseMotherEffingLyrics(searchTerm)
+    process.stdout.write(`${result}\n`)
   }
 
   async getThoseMotherEffingLyrics(searchTerm) {
@@ -90,4 +87,10 @@ export const getlyrics = new class GetLyrics {
     const tracks = await GetLyrics.music.trackLyrics({ track_id: trackId })
     return typeov(parserFn) === 'function' ? parserFn(tracks) : tracks
   }
+}
+
+export const getlyrics = new GetLyrics
+
+export function cli() {
+  return GetLyrics.prototype.start().catch(process.stderr.write)
 }

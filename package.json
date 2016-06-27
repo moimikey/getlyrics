@@ -2,7 +2,7 @@
   "name": "getlyrics",
   "version": "1.0.2",
   "description": "Fast. Simple. Quick. Lyrics In your terminal.",
-  "main": "cli.js",
+  "main": "index.js",
   "preferGlobal": true,
   "author": "Michael Scott Hertzberg <mshertzberg@gmail.com> (http://hertzber.gs/)",
   "license": "MIT",

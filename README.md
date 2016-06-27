@@ -1,10 +1,31 @@
 # 🦄  getlyrics [![Build Status][travis-image]][travis-url]
 [![Version][npm-version-image]][npm-version-url] [![License][npm-license-image]][npm-license-url] [![Downloads][npm-downloads-image]][npm-downloads-url] [![Deps][npm-deps-image]][npm-deps-url] [![DevDeps][npm-devdeps-image]][npm-devdeps-url]
 
+# notes
+> technically legal. uses MusixMatch behind the scenes.
+
 # cli
 ```sh
 npm -g install getlyrics
-getlyrics -s 'oops i did it again britney spears'
+getlyrics -s 'oops i did it again britney spears' | less
+```
+
+```sh
+Yeah yeah yeah yeah yeah yeah
+...
+
+Yeah yeah yeah yeah yeah yeah
+I think I did it again
+I made you believe we're more than just friends
+...
+```
+
+# node module
+> can be used as a node module too!
+
+```js
+import { getlyrics } from 'getlyrics'
+getlyrics.getThoseMotherEffingLyrics('chet faker - gold').then(console.log)
 ```
 
 [npm-version-url]: https://www.npmjs.com/package/getlyrics
