@@ -27,7 +27,7 @@ export class GetLyrics {
       .help('h')
       .alias('h', 'help')
       .argv
-    const searchTerm = [...args.search].join(' ')
+    const searchTerm = args.search
     console.info(`searching ${searchTerm}...\n`)
     const result = await this.getThoseMotherEffingLyrics(searchTerm)
     process.stdout.write(`${result}\n`)
