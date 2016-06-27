@@ -54,12 +54,12 @@
     "nodemon": "1.9.2",
     "npm-run-all": "2.2.2",
     "rimraf": "2.5.2",
-    "tap": "5.8.0",
-    "typeov": "1.2.2"
+    "tap": "5.8.0"
   },
   "dependencies": {
     "babel-runtime": "6.9.2",
     "musicmatch": "0.2.5",
-    "yargs": "4.7.1"
+    "yargs": "4.7.1",
+    "typeov": "1.2.2"
   }
 }
