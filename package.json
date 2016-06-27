@@ -2,10 +2,13 @@
   "name": "getlyrics",
   "version": "1.0.0",
   "description": "Fast. Simple. Quick. Lyrics In your terminal.",
-  "main": "index.js",
+  "main": "cli.js",
   "preferGlobal": true,
   "author": "Michael Scott Hertzberg <mshertzberg@gmail.com> (http://hertzber.gs/)",
   "license": "MIT",
+  "bin": {
+    "getlyrics": "cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/moimikey/getlyrics.git"
