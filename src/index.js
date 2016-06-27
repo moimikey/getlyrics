@@ -3,19 +3,18 @@ import argv from 'yargs'
 import assert from 'assert'
 import musicmatch from 'musicmatch'
 
-class GetLyrics {
+export class GetLyrics {
   static music = musicmatch()
 
   constructor() {
+    const getThoseMotherEffingLyrics = this.getThoseMotherEffingLyrics.bind(this)
     return {
-      parseMessageBody: this.parseMessageBody.bind(this),
-      parseTracks: this.parseTracks.bind(this),
-      parseTrackIdFromTrack: this.parseTrackIdFromTrack.bind(this),
-      parseLyrics: this.parseLyrics.bind(this),
-      fetchTracksByQuery: this.fetchTracksByQuery.bind(this),
-      fetchLyricsByTrackId: this.fetchLyricsByTrackId.bind(this),
-      getTracksWithLyrics: this.getTracksWithLyrics.bind(this),
-      getThoseMotherEffingLyrics: this.getThoseMotherEffingLyrics.bind(this)
+      getThoseMotherEffingLyrics,
+      for: getThoseMotherEffingLyrics,
+      to: getThoseMotherEffingLyrics,
+      of: getThoseMotherEffingLyrics,
+      search: getThoseMotherEffingLyrics,
+      query: getThoseMotherEffingLyrics
     }
   }
 
@@ -24,12 +23,12 @@ class GetLyrics {
       .demand('s')
       .alias('s', 'search')
       .nargs('s', 1)
-      .describe('s', 'Grimes - REALiTi')
+      .describe('s', '"Grimes - REALiTi" <- quotes needed!')
       .help('h')
       .alias('h', 'help')
       .argv
-    const searchTerm = args.search
-    process.stdout.write(`searching ${searchTerm}...\n`)
+    const searchTerm = [...args.search].join(' ')
+    console.info(`searching ${searchTerm}...\n`)
     const result = await this.getThoseMotherEffingLyrics(searchTerm)
     process.stdout.write(`${result}\n`)
   }

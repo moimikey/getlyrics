@@ -28,6 +28,15 @@ import { getlyrics } from 'getlyrics'
 getlyrics.getThoseMotherEffingLyrics('chet faker - gold').then(console.log)
 ```
 
+```js
+// convenience!
+getlyrics.for('chet faker - gold')
+getlyrics.to('chet faker - gold')
+getlyrics.of('chet faker - gold')
+getlyrics.search('chet faker - gold')
+getlyrics.query('chet faker - gold')
+```
+
 [npm-version-url]: https://www.npmjs.com/package/getlyrics
 [npm-version-image]: https://img.shields.io/npm/v/getlyrics.svg
 [npm-license-url]: https://github.com/moimikey/getlyrics/blob/master/LICENSE
