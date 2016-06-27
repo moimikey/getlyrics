@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    "transform-runtime",
+    "ramda",
+    "lodash"
+  ],
+  "presets": [
+    "es2015",
+    "stage-0"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "getlyrics",
+  "version": "1.0.0",
+  "description": "Fast. Simple. Quick. Lyrics In your terminal.",
+  "main": "index.js",
+  "preferGlobal": true,
+  "author": "Michael Scott Hertzberg <mshertzberg@gmail.com> (http://hertzber.gs/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moimikey/getlyrics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moimikey/getlyrics/issues"
+  },
+  "homepage": "https://github.com/moimikey/getlyrics",
+  "keywords": [
+    "lyrics",
+    "lyric",
+    "getlyrics",
+    "findlyrics",
+    "lyricfinder",
+    "song",
+    "cli"
+  ],
+  "scripts": {
+    "build": "babel --ignore *.spec.js -d lib src",
+    "clean": "rimraf .eslintcache {lib,build}/**/*.{js,log}",
+    "dedupe": "npm dedupe",
+    "devel": "nodemon -w src --exec npm-run-all --sequential start",
+    "lint": "eslint --cache src benchmark",
+    "prebuild": "npm-run-all --sequential clean lint",
+    "prepublish": "npm-run-all --sequential clean prune test lint build",
+    "prune": "npm prune",
+    "shrink": "npm-run-all --sequential tidy && npm shrinkwrap",
+    "start": "babel-node src",
+    "test": "NODE_ENV=test babel-tap -Rspec src/**/*.spec.js",
+    "test:watch": "nodemon -w src --exec npm run test",
+    "tidy": "npm-run-all --sequential prune dedupe"
+  },
+  "devDependencies": {
+    "babel-cli": "6.10.1",
+    "babel-eslint": "6.1.0",
+    "babel-plugin-lodash": "3.2.0",
+    "babel-plugin-ramda": "1.1.5",
+    "babel-plugin-transform-runtime": "6.9.0",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-stage-0": "6.5.0",
+    "babel-runtime": "6.9.2",
+    "babel-tap": "5.0.0",
+    "eslint": "2.13.1",
+    "eslint-plugin-babel": "3.3.0",
+    "nodemon": "1.9.2",
+    "npm-run-all": "2.2.2",
+    "rimraf": "2.5.2",
+    "tap": "5.8.0",
+    "typeov": "1.2.2"
+  },
+  "dependencies": {
+    "babel-runtime": "6.9.2",
+    "bluebird": "3.4.1",
+    "especially": "2.0.1",
+    "eventemitter2": "1.0.5",
+    "hasdom": "0.0.4",
+    "isomorphic-fetch": "2.2.1",
+    "lodash": "4.13.1",
+    "log-symbols": "1.0.2",
+    "lru-cache": "4.0.1",
+    "lru-memoize": "1.0.1",
+    "musicmatch": "0.2.5",
+    "npm-run-all": "2.2.2",
+    "ramda": "0.21.0",
+    "shortid": "2.2.6",
+    "url": "0.11.0",
+    "yargs": "4.7.1"
+  }
+}
