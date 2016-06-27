@@ -1,6 +1,6 @@
 {
   "name": "getlyrics",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Fast. Simple. Quick. Lyrics In your terminal.",
   "main": "index.js",
   "preferGlobal": true,
