@@ -7,23 +7,21 @@ describe('getlyrics', i => {
 
   it('fetchTracksByQuery', async t => {
     await getlyrics.fetchTracksByQuery('Chet Faker - Gold', obj => {
-      t.equal(typeov(obj), 'object')
-      t.equal(typeov(obj.message), 'object')
-      t.equal(typeov(obj.message.body), 'object')
+      t.equal(typeov(obj.message.body), 'object', 'returns an object with a message and body')
       t.end()
     })
   })
 
   it('parseMessageBody', async t => {
     const tracks = await getlyrics.fetchTracksByQuery('Chet Faker - Gold', getlyrics.parseMessageBody)
-    t.equal(typeov(tracks), 'object', 'parses a query')
+    t.equal(typeov(tracks), 'object', 'parses a search query')
   })
 
   it('parseTracks', async t => {
     const tracks = getlyrics.parseTracks({
       track_list: []
     })
-    t.equal(typeov(tracks), 'array')
+    t.equal(typeov(tracks), 'array', 'can parse a track list')
   })
 
   it('getTracksWithLyrics', async t => {
@@ -34,12 +32,12 @@ describe('getlyrics', i => {
       }
     }]
     const filteredTracks = getlyrics.getTracksWithLyrics(tracks)
-    t.equal(filteredTracks.length, 1, 'returns only the first result')
+    t.equal(filteredTracks.length, 1, 'returns only the first result in an array of tracks')
     t.end()
   })
 
   it('parseTrackIdFromTrack', async t => {
-    t.equal(getlyrics.parseTrackIdFromTrack({ track: { track_id: 68151731 }}), 68151731)
+    t.equal(getlyrics.parseTrackIdFromTrack({ track: { track_id: 68151731 }}), 68151731, 'can parse a trackId from a track')
     t.end()
   })
 
