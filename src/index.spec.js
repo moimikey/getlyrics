@@ -7,6 +7,7 @@ test('for', t => {
   const getlyrics = new GetLyrics
   t.equal(typeov(getlyrics.for), 'function', 'is a function')
   t.equal(typeov(getlyrics.for.prototype), 'undefined', 'is bound')
+  t.equal(getlyrics.for.name, 'bound getThoseMotherEffingLyrics', 'is bound correctly')
   t.end()
 })
 
@@ -14,6 +15,7 @@ test('to', t => {
   const getlyrics = new GetLyrics
   t.equal(typeov(getlyrics.to), 'function', 'is a function')
   t.equal(typeov(getlyrics.to.prototype), 'undefined', 'is bound')
+  t.equal(getlyrics.to.name, 'bound getThoseMotherEffingLyrics', 'is bound correctly')
   t.end()
 })
 
@@ -21,6 +23,7 @@ test('of', t => {
   const getlyrics = new GetLyrics
   t.equal(typeov(getlyrics.of), 'function', 'is a function')
   t.equal(typeov(getlyrics.of.prototype), 'undefined', 'is bound')
+  t.equal(getlyrics.of.name, 'bound getThoseMotherEffingLyrics', 'is bound correctly')
   t.end()
 })
 
@@ -28,6 +31,7 @@ test('search', t => {
   const getlyrics = new GetLyrics
   t.equal(typeov(getlyrics.search), 'function', 'is a function')
   t.equal(typeov(getlyrics.search.prototype), 'undefined', 'is bound')
+  t.equal(getlyrics.search.name, 'bound getThoseMotherEffingLyrics', 'is bound correctly')
   t.end()
 })
 
@@ -35,13 +39,13 @@ test('query', t => {
   const getlyrics = new GetLyrics
   t.equal(typeov(getlyrics.query), 'function', 'is a function')
   t.equal(typeov(getlyrics.query.prototype), 'undefined', 'is bound')
+  t.equal(getlyrics.query.name, 'bound getThoseMotherEffingLyrics', 'is bound correctly')
   t.end()
 })
 
 test('getThoseMotherEffingLyrics', t => {
   const getlyrics = new GetLyrics
   t.equal(typeov(getlyrics.getThoseMotherEffingLyrics), 'function', 'is a function')
-  t.equal(typeov(getlyrics.getThoseMotherEffingLyrics.prototype), 'undefined', 'is bound')
   t.end()
 })
 
