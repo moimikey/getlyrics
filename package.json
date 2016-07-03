@@ -54,7 +54,7 @@
     "eslint-plugin-babel": "3.3.0",
     "nodemon": "1.9.2",
     "npm-run-all": "2.3.0",
-    "rimraf": "2.5.2",
+    "rimraf": "2.5.3",
     "tap": "5.8.0"
   },
   "dependencies": {
