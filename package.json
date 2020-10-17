@@ -60,7 +60,7 @@
   "dependencies": {
     "babel-runtime": "6.11.6",
     "musicmatch": "0.2.5",
-    "yargs": "5.0.0",
+    "yargs": "16.1.0",
     "typeov": "1.2.3"
   }
 }
